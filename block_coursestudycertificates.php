@@ -70,7 +70,7 @@ class block_coursestudycertificates extends \block_base
 					INNER JOIN {certificate_issues} AS  issues on issues.certificateid = cert.id
 				    INNER JOIN {course_modules} AS  cm on cm.instance = cert.id  and cm.course = cert.course
 				    INNER JOIN {modules} AS  m on m.id = cm.module and m.name = 'certificate'
-					INNER JOIN {course} c on c.id = cm.course and c.visible = 1
+					INNER JOIN {course} c on c.id = cm.course
 			    WHERE issues.userid = ?
 			    UNION
 			    SELECT DISTINCT  UUID() as rand, issues.id, 'customcert' AS certificationtype
@@ -81,7 +81,7 @@ class block_coursestudycertificates extends \block_base
 					INNER JOIN {customcert_issues} AS  issues on issues.customcertid = cert.id
 				    INNER JOIN {course_modules} AS  cm on cm.instance = cert.id  and cm.course = cert.course
 				    INNER JOIN {modules} AS  m on m.id = cm.module and m.name = 'certificate'
-					INNER JOIN {course} c on c.id = cm.course and c.visible = 1
+					INNER JOIN {course} c on c.id = cm.course
 			    WHERE issues.userid = ?";
 		$result = $DB->get_records_sql($sql, [$USER->id, $USER->id]);
 
