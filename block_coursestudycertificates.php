@@ -156,7 +156,7 @@ class block_coursestudycertificates extends \block_base
 
         // Load user defined title and make sure it's never empty.
         if (empty($this->config->title)) {
-            $this->title = get_string('pluginname', 'block_coursestudycertificates');
+            $this->title = get_string('usertitle', 'block_coursestudycertificates');
         } else {
             $this->title = $this->config->title;
         }

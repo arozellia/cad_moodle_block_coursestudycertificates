@@ -26,5 +26,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Course and Study Certificates';
+$string['usertitle'] = 'My Progress and Results Certificates';
 $string['privacy:metadata'] = 'The Course Study Certificates block only displays existing course data.';
 $string['coursestudycertificates:addinstance'] = 'Add a course study certificates block';
